@@ -2,6 +2,7 @@ window.addEventListener('load', function(){
 	var cz=new CZ();
 	cz.productSlider();
 	cz.slider();
+	cz.purifierSlider();
 })
 
 var CZ=function(){};
@@ -34,6 +35,30 @@ CZ.prototype={
 		};
 
 		document.getElementById('slider').onmouseleave=function(){
+		  mySwiper.autoplay.start();
+		};
+	},
+
+	purifierSlider: function(){
+		var mySwiper = new Swiper('.purifier-content .swiper-container', {
+			speed: 1500,
+			autoplay: {
+			    delay: 2000,
+			    stopOnLastSlide: false,
+			    disableOnInteraction: true,
+		   },
+		   pagination: {
+		    	el: '.swiper-pagination',
+		    	clickable :true
+		  },
+		  loop: true
+		});
+
+		document.querySelector('.purifier-content').onmouseenter=function(){
+		  mySwiper.autoplay.stop();
+		};
+
+		document.querySelector('.purifier-content').onmouseleave=function(){
 		  mySwiper.autoplay.start();
 		};
 	}
