@@ -3,6 +3,7 @@ window.addEventListener('load', function(){
 	cz.productSlider();
 	cz.slider();
 	cz.purifierSlider();
+	cz.headerSlider();
 })
 
 var CZ=function(){};
@@ -61,5 +62,11 @@ CZ.prototype={
 		document.querySelector('.purifier-content').onmouseleave=function(){
 		  mySwiper.autoplay.start();
 		};
+	},
+
+	headerSlider: function(){
+		document.querySelector('.icon-menu').addEventListener('click',function(){
+			document.querySelector('#header').classList.toggle('active');
+		})
 	}
 };
